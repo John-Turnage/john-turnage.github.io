@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <p class="site-footer__name">{{ site.author.name }}</p>
+      <p>{{ site.author.affiliation }}<br>{{ site.author.institution }}</p>
+      <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+    </div>
+    <div class="site-footer__links">
+      {%- for link in site.links %}
+      <a href="{{ link.url }}" rel="me noopener"><svg class="icon" aria-hidden="true"><use href="#icon-{{ link.icon }}"></use></svg>{{ link.name }}</a>
+      {%- endfor %}
+    </div>
+  </div>
+  {%- if site.updated %}<p class="site-footer__meta">Updated {{ site.updated }}</p>{% endif %}
+</footer>

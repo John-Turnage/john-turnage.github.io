@@ -1,0 +1,67 @@
+---
+layout: page
+title: Research
+permalink: /research/
+math: true
+lede: 'Selected projects, related work, and work in progress. Full references are on the <a href="/publications/">Publications</a> page.'
+---
+<div class="projects">
+  {%- for project in site.data.projects.selected %}
+  {%- assign n = project.figures | size %}
+  <article class="project" id="{{ project.id }}">
+    <div class="project__text">
+      <p class="kicker">{{ project.meta }}</p>
+      <h2 class="project__title">{{ project.title }}</h2>
+      {{ project.body | markdownify }}
+      <p class="project__links">
+        {%- for link in project.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor -%}
+        {%- if project.status %}<span class="meta">{{ project.status }}</span>{% endif -%}
+      </p>
+      <p class="project__with meta">With {{ project.with | markdownify | remove: "<p>" | remove: "</p>" | strip }}.</p>
+    </div>
+    {%- if n > 0 %}
+    <figure class="viewer" tabindex="-1" aria-label="Figures for {{ project.title }}">
+      {%- for fig in project.figures %}
+      <div class="viewer__slide">
+        <div class="viewer__frame"><a href="{{ fig.src | relative_url }}" title="Open full size"><img src="{{ fig.src | relative_url }}" alt="{{ fig.alt }}" loading="lazy"></a></div>
+        <figcaption>{{ fig.caption }}</figcaption>
+      </div>
+      {%- endfor %}
+      {%- if n > 1 %}
+      <div class="viewer__controls">
+        <button type="button" data-prev aria-label="Previous figure">‹</button>
+        <span class="viewer__count" aria-live="polite">1 / {{ n }}</span>
+        <button type="button" data-next aria-label="Next figure">›</button>
+      </div>
+      {%- endif %}
+    </figure>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+</div>
+
+<div class="related">
+  <h2 class="kicker">Related work</h2>
+  {%- for item in site.data.projects.related %}
+  <article class="related__item" id="{{ item.id }}">
+    <div class="related__text">
+      <h3>{{ item.title }}</h3>
+      {{ item.body | markdownify }}
+      <p class="project__links">{% for link in item.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</p>
+      {%- if item.with %}
+      <p class="meta">With {{ item.with | markdownify | remove: "<p>" | remove: "</p>" | strip }}.</p>
+      {%- endif %}
+    </div>
+  </article>
+  {%- endfor %}
+  {%- for item in site.data.projects.ongoing %}
+  <article class="related__item">
+    <div class="related__text">
+      <h3>{{ item.title }}</h3>
+      <p class="meta related__meta">In progress</p>
+      {{ item.body | markdownify }}
+      <p class="meta">With {{ item.with }}.</p>
+    </div>
+  </article>
+  {%- endfor %}
+</div>

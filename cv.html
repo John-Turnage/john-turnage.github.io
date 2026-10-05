@@ -1,0 +1,16 @@
+---
+layout: page
+title: Curriculum vitae
+permalink: /cv/
+page_class: page--cv
+---
+<div class="cv-page">
+  <p class="link-row">
+    <a class="button" href="{{ site.author.cv | relative_url }}">
+      <svg class="icon" aria-hidden="true"><use href="#icon-file"></use></svg>Open CV (PDF)
+    </a>
+    <a href="{{ site.author.cv | relative_url }}" download>Download CV</a>
+  </p>
+  <iframe class="cv-viewer" src="{{ site.author.cv | relative_url }}#navpanes=0&amp;pagemode=none&amp;view=FitH"
+    title="Curriculum vitae of {{ site.author.name | escape }}"></iframe>
+</div>

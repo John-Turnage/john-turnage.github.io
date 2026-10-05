@@ -1,0 +1,22 @@
+---
+layout: page
+title: Talks
+permalink: /talks/
+lede: Conference presentations, seminars, and posters.
+---
+{%- assign now = site.time | date: "%s" | plus: 0 %}
+{%- for group in site.data.talks %}
+<h2>{{ group.group }}</h2>
+<ul class="talks">
+  {%- for talk in group.items %}
+  {%- assign t = talk.date | date: "%s" | plus: 2678400 %}
+  <li>
+    <div>
+      <p class="talks__title">{{ talk.title }}{% if t > now %}<span class="tag" data-month="{{ talk.date | date: '%Y-%m' }}">Upcoming</span>{% endif %}</p>
+      <p class="talks__event meta">{{ talk.event }}</p>
+    </div>
+    <time class="meta" datetime="{{ talk.date | date: '%Y-%m' }}">{{ talk.date | date: "%b %Y" }}</time>
+  </li>
+  {%- endfor %}
+</ul>
+{%- endfor %}

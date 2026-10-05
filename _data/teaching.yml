@@ -1,0 +1,13 @@
+# Courses taught as instructor of record, newest first. All at the University of Utah.
+
+- number: MATH 1030
+  title: Introduction to Quantitative Reasoning
+  term: Fall 2023
+  role: Instructor of record
+  syllabus: /files/teaching/math1030-fall2023-syllabus.pdf
+
+- number: MATH 2250
+  title: Differential Equations and Linear Algebra
+  term: Summer 2023
+  role: Instructor of record
+  syllabus: /files/teaching/math2250-summer2023-syllabus.pdf

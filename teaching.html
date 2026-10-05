@@ -1,0 +1,20 @@
+---
+layout: page
+title: Teaching
+permalink: /teaching/
+lede: Courses taught as instructor of record at the University of Utah.
+---
+<ul class="courses">
+  {%- for course in site.data.teaching %}
+  <li class="course">
+    <div>
+      <p class="kicker">{{ course.number }}</p>
+      <h2 class="course__title">{{ course.title }}</h2>
+      <p class="meta">{{ course.term }}</p>
+    </div>
+    {%- if course.syllabus %}
+    <p class="course__links"><a href="{{ course.syllabus | relative_url }}">Syllabus (PDF)</a></p>
+    {%- endif %}
+  </li>
+  {%- endfor %}
+</ul>

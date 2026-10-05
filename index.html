@@ -1,2 +1,51 @@
-hello world!
+---
+layout: default
+---
+{%- assign headshot = site.static_files | where: "path", site.author.photo | first -%}
 
+<section class="section hero" aria-labelledby="name">
+  <div class="hero__text">
+    <p class="kicker">Mathematics · Scientific computing</p>
+    <h1 id="name">{{ site.author.name }}</h1>
+    <div class="hero__intro">
+      <p>
+        I am a mathematics PhD candidate at the University of Utah, advised by Akil Narayan and
+        affiliated with the Scientific Computing and Imaging Institute. I expect to complete my PhD
+        in May 2027.
+      </p>
+      <p>
+        I study how to construct accurate approximations from limited data, using approximation theory
+        and probability. Much of my work concerns learning PDE solution operators from simulations.
+        I develop spaces of approximating operators, sampling procedures for stable recovery, and
+        methods for estimating the component left unresolved by a finite approximation. Related work
+        concerns quadrature, reduced-order models, and inverse problems.
+      </p>
+    </div>
+    <div class="link-row">
+      <a class="button" href="{{ '/cv/' | relative_url }}">
+        <svg class="icon" aria-hidden="true"><use href="#icon-file"></use></svg>Curriculum vitae
+      </a>
+      <a href="mailto:{{ site.author.email }}"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>Email</a>
+      {%- for link in site.links %}
+      <a href="{{ link.url }}" rel="me noopener"><svg class="icon" aria-hidden="true"><use href="#icon-{{ link.icon }}"></use></svg>{{ link.name }}</a>
+      {%- endfor %}
+    </div>
+  </div>
+  {%- if headshot %}
+  <img class="portrait" src="{{ site.author.photo | relative_url }}" alt="Portrait of {{ site.author.name }}" width="496" height="620">
+  {%- else %}
+  <div class="portrait portrait--placeholder" aria-hidden="true">JT</div>
+  {%- endif %}
+</section>
+
+<section class="section education" id="education" aria-labelledby="education-heading">
+  <h2 id="education-heading">Education</h2>
+  <ul class="entries">
+    {%- for entry in site.data.background.education %}
+    <li>
+      <div class="entries__head"><strong>{{ entry.place }}</strong><span class="meta">{{ entry.when }}</span></div>
+      <p>{{ entry.what }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

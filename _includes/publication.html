@@ -1,0 +1,42 @@
+{%- assign pub = include.pub -%}
+<li class="pub">
+  <h3 class="pub__title">
+    {%- if pub.url %}<a href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif -%}
+  </h3>
+  <p class="pub__authors">
+    {%- for name in pub.authors -%}
+      {%- if name == site.author.name %}<span class="me">{{ name }}</span>{% else %}{{ name }}{% endif -%}
+      {%- unless forloop.last %}{% if forloop.length > 2 %}, {% else %} {% endif %}{% if forloop.rindex == 2 %}and {% endif %}{% endunless -%}
+    {%- endfor -%}
+  </p>
+  <p class="pub__venue meta">
+    {%- if pub.venue == "Submitted" or pub.venue == "In preparation" -%}
+      {{ pub.venue }}, {{ pub.year }}
+    {%- else -%}
+      <cite>{{ pub.venue }}</cite>{% if pub.details %}, {{ pub.details }}{% endif %}, {{ pub.year }}
+    {%- endif -%}
+  </p>
+  {%- if pub.links or pub.abstract or pub.bibtex %}
+  {%- assign key = pub.title | slugify | truncate: 40, "" %}
+  <div class="pub__links">
+    {%- for link in pub.links %}
+    <a href="{{ link.url }}">{{ link.label }}</a>
+    {%- endfor %}
+    {%- if pub.abstract %}
+    <button class="pub__toggle" type="button" aria-expanded="false" aria-controls="abs-{{ key }}">Abstract</button>
+    {%- endif %}
+    {%- if pub.bibtex %}
+    <button class="pub__toggle" type="button" aria-expanded="false" aria-controls="bib-{{ key }}">BibTeX</button>
+    {%- endif %}
+  </div>
+  {%- if pub.abstract %}
+  <div class="pub__panel" id="abs-{{ key }}" hidden>{{ pub.abstract | markdownify }}</div>
+  {%- endif %}
+  {%- if pub.bibtex %}
+  <div class="pub__panel" id="bib-{{ key }}" hidden>
+    <pre>{{ pub.bibtex | escape }}</pre>
+    <button class="copy-button" type="button">Copy BibTeX</button>
+  </div>
+  {%- endif %}
+  {%- endif %}
+</li>

@@ -1,0 +1,14 @@
+---
+layout: page
+title: Publications
+permalink: /publications/
+math: true
+---
+{%- for group in site.data.publications %}
+<h2>{{ group.group }}</h2>
+<ol class="pubs">
+  {%- for pub in group.items %}
+  {% include publication.html pub=pub %}
+  {%- endfor %}
+</ol>
+{%- endfor %}

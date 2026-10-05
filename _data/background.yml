@@ -1,0 +1,46 @@
+# Education is shown on the home page. Other background is retained here for reference.
+# The full CV is displayed as a PDF on /cv/. detail: Markdown.
+
+education:
+  - place: University of Utah
+    what: PhD candidate, Mathematics
+    when: 2022–present
+    detail: Advised by Akil Narayan; expected May 2027.
+  - place: Wake Forest University
+    what: MS, Mathematics
+    when: 2020–2022
+    detail: "Thesis: [*Geometric Mechanics and Control*](https://hdl.handle.net/10339/100729), advised by John Gemmer."
+  - place: University of Georgia
+    what: BS, Physics; BS, Mathematics
+    when: 2014–2019
+    detail: Minor in Philosophy.
+
+experience:
+  - place: Sandia National Laboratories
+    what: Graduate Research Intern
+    when: Summer 2025
+    detail: Optimization and Uncertainty Quantification group, mentored by John D. Jakeman.
+training:
+  - place: SLMath
+    what: John Tukey Summer Graduate School, Mathematics of Generative Models
+    when: Summer 2026
+
+service:
+  - place: SIAM Student Chapter, University of Utah
+    what: Executive officer and webmaster
+    when: 2024–present
+  - place: Wasatch SIAM Student Chapters Conference
+    what: Co-organizer
+    when: 2026
+  - place: SIAM Conference on Computational Science and Engineering
+    what: "Minisymposium co-organizer, *Accelerating Inference, UQ, and Optimization with Machine Learning Models*"
+    when: 2025
+  - place: Applied Math Collective, University of Utah
+    what: Organizer of the graduate student applied mathematics seminar
+    when: 2024–2025
+  - place: Graduate Student Advisory Committee, Department of Mathematics
+    what: Hiring chair; retention, promotion, and tenure committee member
+    when: 2023–2025
+  - place: College of Science Scholarships and Awards Committee
+    what: Graduate student member
+    when: 2026

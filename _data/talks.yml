@@ -1,0 +1,44 @@
+# Talks and posters, newest first within each group.
+# date: first of the month is fine; talks after the build date are marked "Upcoming".
+
+- group: Invited minisymposium talks
+  items:
+    - title: Christoffel-Weighted Approximation for Stable Operator Learning with Posterior Uncertainty
+      event: SIAM Conference on Computational Science and Engineering
+      date: 2027-02-01
+    - title: Certifiable Operator Learning via Optimally Weighted Least Squares
+      event: SIAM Conference on Mathematics of Data Science
+      date: 2026-11-01
+    - title: An Optimal Weighted Least Squares Framework for Operator Learning
+      event: WCCM-ECCOMAS
+      date: 2026-07-01
+    - title: An Optimal Weighted Least Squares Framework for Operator Learning
+      event: U.S. National Congress on Computational Mechanics
+      date: 2025-07-01
+
+- group: Contributed and seminar talks
+  items:
+    - title: Uncertainty Quantification in Operator Learning
+      event: Wasatch SIAM Student Chapters Conference
+      date: 2026-04-01
+    - title: Uncertainty Quantification in Operator Learning
+      event: Applied Math Collective Seminar, University of Utah
+      date: 2026-04-01
+    - title: Certifiable Operator Learning
+      event: FASTMath Institute, Uncertainty Quantification Team (virtual)
+      date: 2025-07-01
+    - title: Operator Learning
+      event: Applied Math Collective Seminar, University of Utah
+      date: 2024-11-01
+    - title: Dynamics of a Rolling Disk
+      event: Integrating Research in Science, Wake Forest University
+      date: 2022-04-01
+
+- group: Posters
+  items:
+    - title: An Optimal Weighted Least Squares Framework for Operator Learning
+      event: SIAM Conference on Mathematics of Data Science
+      date: 2024-10-01
+    - title: An Optimal Weighted Least Squares Framework for Operator Learning
+      event: NSF Computational Mathematics PI Meeting
+      date: 2024-07-01

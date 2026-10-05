@@ -1,0 +1,70 @@
+title: John Turnage
+description: >-
+  John Turnage is a mathematics PhD candidate at the University of Utah working on
+  approximation theory and probability for scientific computing: operator learning,
+  optimal sampling, quadrature, and uncertainty quantification.
+url: https://john-turnage.github.io
+baseurl: ""
+lang: en
+
+author:
+  name: John Turnage
+  role: PhD Candidate in Mathematics, University of Utah
+  affiliation: Department of Mathematics & Scientific Computing and Imaging Institute
+  institution: University of Utah
+  email: turnage@math.utah.edu
+  # Drop a square-ish portrait at this path and it appears on the home page.
+  photo: /assets/img/headshot.jpg
+  cv: /files/John_Turnage_CV.pdf
+
+# Shown in the footer. Change it when the content changes (not on every rebuild).
+updated: October 2026
+
+# Profile links shown in the hero and footer.
+links:
+  - name: Google Scholar
+    icon: scholar
+    url: https://scholar.google.com/citations?user=GrS24oAAAAAJ&hl=en
+  - name: GitHub
+    icon: github
+    url: https://github.com/John-Turnage
+  - name: ORCID
+    icon: orcid
+    url: https://orcid.org/0009-0004-2215-0023
+
+nav:
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: Talks
+    url: /talks/
+  - title: Teaching
+    url: /teaching/
+  - title: CV
+    url: /cv/
+
+# Link previews (Slack, email, social media): the headshot as a small "summary" card on every page.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /assets/img/headshot.jpg
+        width: 720
+        height: 900
+        alt: Portrait of John Turnage
+      twitter:
+        card: summary
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - External_Files/
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/

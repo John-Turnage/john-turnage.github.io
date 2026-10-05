@@ -1,0 +1,150 @@
+# Publications, grouped by status. Within a group, list newest first.
+# authors: full names in order; the site bolds "John Turnage".
+# Abstracts may use $...$ for math (rendered with KaTeX).
+
+- group: Published
+  items:
+    - title: "Kernel Neural Operators (KNOs) for Scalable, Memory-efficient, Geometrically-flexible Operator Learning"
+      authors: [Matthew Lowery, John Turnage, Zachary Morrow, John D. Jakeman, Akil Narayan, Shandian Zhe, Varun Shankar]
+      venue: Transactions on Machine Learning Research
+      year: 2026
+      url: https://openreview.net/forum?id=Q0C4jYZQ7x
+      links:
+        - label: TMLR
+          url: https://openreview.net/forum?id=Q0C4jYZQ7x
+        - label: arXiv
+          url: https://arxiv.org/abs/2407.00809
+      abstract: >-
+        This paper introduces the Kernel Neural Operator (KNO), a provably convergent operator-learning
+        architecture that utilizes compositions of deep kernel-based integral operators for function-space
+        approximation of operators (maps from functions to functions). The KNO decouples the choice of kernel
+        from the numerical integration scheme (quadrature), thereby naturally allowing for operator learning
+        with explicitly-chosen trainable kernels on irregular geometries. On irregular domains, this allows the
+        KNO to utilize domain-specific quadrature rules. To help ameliorate the curse of dimensionality, we also
+        leverage an efficient dimension-wise factorization algorithm on regular domains. More importantly, the
+        ability to explicitly specify kernels also allows the use of highly expressive, non-stationary, neural
+        anisotropic kernels whose parameters are computed by training neural networks. We present universal
+        approximation theorems showing that both the continuous and fully discretized KNO are universal
+        approximators on operator learning problems. Numerical results demonstrate that on existing benchmarks
+        the training and test accuracy of KNOs is closely comparable to or higher than that of popular neural
+        operators while typically using an order of magnitude fewer trainable parameters, with the more
+        expressive kernels proving important to attaining high accuracy. KNOs thus facilitate low-memory,
+        geometrically-flexible, deep operator learning, while retaining the implementation simplicity and
+        transparency of traditional kernel methods from both scientific computing and machine learning.
+      bibtex: |-
+        @article{lowery2026kno,
+          title   = {Kernel Neural Operators ({KNOs}) for Scalable, Memory-efficient, Geometrically-flexible Operator Learning},
+          author  = {Lowery, Matthew and Turnage, John and Morrow, Zachary and Jakeman, John D. and Narayan, Akil and Zhe, Shandian and Shankar, Varun},
+          journal = {Transactions on Machine Learning Research},
+          year    = {2026},
+          url     = {https://openreview.net/forum?id=Q0C4jYZQ7x}
+        }
+
+    - title: "Benchmarking Generative Models for Solving High-Dimensional Goal-Oriented Inverse Problems"
+      authors: [John Turnage, Matthew Lowery, John D. Jakeman]
+      venue: Computer Science Research Institute Summer Proceedings 2025, Sandia National Laboratories
+      details: "pp. 286–303, SAND2025-14267O"
+      year: 2025
+      url: "https://www.sandia.gov/app/uploads/sites/210/2025/12/CSRI-2025-proceedings_FINALDec1.pdf#page=296"
+      links:
+        - label: Proceedings
+          url: "https://www.sandia.gov/app/uploads/sites/210/2025/12/CSRI-2025-proceedings_FINALDec1.pdf#page=296"
+      abstract: >-
+        High-fidelity numerical simulation is essential for predicting unobservable quantities of interest (QoI)
+        in physical phenomena. However, all models are subject to uncertainty, making it crucial to condition model
+        predictions and estimates of uncertainty on observational and experimental data. Previous work has focused
+        extensively on using Bayesian inference to estimate model parameters from data, but this is often only an
+        intermediate step toward the ultimate goal of conditioning predictions of unobservable QoI on data.
+        Unfortunately, this two-step procedure is computationally expensive, often making accurate estimation of
+        QoI and their associated uncertainty impractical. To address this challenge, we investigate the use of
+        state-of-the-art generative modeling techniques to solve goal-oriented inverse problems that directly
+        condition the distribution of the QoI on data without explicitly forming the posterior. We benchmark
+        several generative model classes—including score-based diffusion models (SDMs), generative adversarial
+        networks (GANs), normalizing flows (NFs), and flow matching (FM)—on an analytically tractable benchmark
+        problem. Inspired by applications to goal-oriented PDE inverse problems, we focus on the regime in which
+        the dimension of the model parameter is significantly higher than that of the QoI. Our results highlight
+        trade-offs in accuracy, sample efficiency, and computational cost across generative model classes,
+        providing valuable insights into their suitability for predicting uncertainty in QoI conditioned on data.
+        This work demonstrates the potential of generative modeling to exploit the inherent low-dimensional
+        structure of the parameter-to-QoI map to substantially reduce the training time required to solve
+        high-dimension goal-oriented inverse problems.
+      bibtex: |-
+        @inproceedings{turnage2025benchmarking,
+          title     = {Benchmarking Generative Models for Solving High-Dimensional Goal-Oriented Inverse Problems},
+          author    = {Turnage, John and Lowery, Matthew and Jakeman, John D.},
+          booktitle = {Computer Science Research Institute Summer Proceedings 2025},
+          publisher = {Sandia National Laboratories},
+          pages     = {286--303},
+          note      = {SAND2025-14267O},
+          year      = {2025}
+        }
+
+- group: Preprints
+  items:
+    - title: "Constructive Tchakaloff Results and Well-Conditioned Quadrature through Randomized Least Squares"
+      authors: [Filip Bělík, Akil Narayan, John Turnage]
+      venue: Submitted
+      year: 2026
+      url: https://arxiv.org/abs/2609.09506
+      links:
+        - label: arXiv
+          url: https://arxiv.org/abs/2609.09506
+      abstract: >-
+        We consider using randomized least squares to construct quadrature rules exact on a subspace of
+        functions. Using new conditions that we call relative admissibility and reference weight concentration,
+        we establish both that the quadrature weights from such a procedure concentrate close to their asymptotic
+        values with prescribed and arbitrarily large probability, and this in turn provides useful finite-sample
+        probabilistic bounds on the stability of the resulting quadrature rules for very general classes of
+        possibly complex-valued functions. Our analysis both significantly generalizes the existing analysis of
+        randomized least squares quadrature construction, and provides new bounds on stability for these rules.
+        These results specialize to existence results for positive quadrature rules, when such rules can be
+        theoretically expected. Because our procedures are formally algorithmic, our analysis is a substantive
+        advance toward computationally constructive generalized Tchakaloff theorems.
+      bibtex: |-
+        @misc{belik2026tchakaloff,
+          title         = {Constructive {T}chakaloff Results and Well-Conditioned Quadrature through Randomized Least Squares},
+          author        = {B{\v{e}}l{\'\i}k, Filip and Narayan, Akil and Turnage, John},
+          year          = {2026},
+          eprint        = {2609.09506},
+          archivePrefix = {arXiv}
+        }
+
+    - title: "An Optimal Weighted Least-Squares Method for Operator Learning"
+      authors: [John Turnage, Matthew Lowery, John D. Jakeman, Zachary Morrow, Akil Narayan, Varun Shankar]
+      venue: Submitted
+      year: 2025
+      url: https://arxiv.org/abs/2512.11168
+      links:
+        - label: arXiv
+          url: https://arxiv.org/abs/2512.11168
+      abstract: >-
+        We consider the problem of learning an unknown, possibly nonlinear operator between separable Hilbert
+        spaces from supervised data. Inputs are drawn from a prescribed probability measure on the input space,
+        and outputs are (possibly noisy) evaluations of the target operator. We regard admissible operators as
+        square-integrable maps with respect to a fixed approximation measure, and we measure reconstruction error
+        in the corresponding Bochner norm. For a finite-dimensional approximation space $V$ of dimension $N$, we
+        study weighted least squares estimators in $V$ and establish probabilistic stability and accuracy bounds
+        in the Bochner norm. We show that there exist sampling measures and weights—defined via an operator-level
+        Christoffel function—that yield uniformly well-conditioned Gram matrices and near-optimal sample
+        complexity, with a number of training samples $M$ on the order of $N \log N$. We complement the analysis
+        by constructing explicit operator approximation spaces in cases of interest: rank-one linear operators
+        that are dense in the class of bounded linear operators, and rank-one polynomial operators that are dense
+        in the Bochner space under mild assumptions on the approximation measure. For both families we describe
+        implementable procedures for sampling from the associated optimal measures. Finally, we demonstrate the
+        effectiveness of this framework on several benchmark problems, including learning solution operators for
+        the Poisson equation, viscous Burgers' equation, and the incompressible Navier–Stokes equations.
+      bibtex: |-
+        @misc{turnage2025owls,
+          title         = {An Optimal Weighted Least-Squares Method for Operator Learning},
+          author        = {Turnage, John and Lowery, Matthew and Jakeman, John D. and Morrow, Zachary and Narayan, Akil and Shankar, Varun},
+          year          = {2025},
+          eprint        = {2512.11168},
+          archivePrefix = {arXiv}
+        }
+
+- group: In preparation
+  items:
+    - title: "Gaussian Residual Inference for Operator Learning from Full-Field Observations"
+      authors: [John Turnage, John D. Jakeman, Akil Narayan]
+      venue: In preparation
+      year: 2026
