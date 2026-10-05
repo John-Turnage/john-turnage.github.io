@@ -1,22 +1,27 @@
-# Home-page research section.
+# Research page.
 #   selected: featured projects, in display order; describe the construction and its guarantees.
 #   related:  compact descriptions, paper links, and collaborators.
 #   ongoing:  short notes on work in progress.
-# body, with, and captions: Markdown; $...$ renders as math. figures: list of {src, alt, caption};
-# with two or more, previous/next controls appear and the first is shown by default.
+# body, with, and captions: Markdown; $...$ renders as math. In a `|-` block, a blank line starts a
+# new paragraph. figures: list of {src, alt, caption}; with two or more, previous/next controls
+# appear and the first is shown by default.
 
 selected:
   - id: owls
     title: Operator learning with optimal sampling
     meta: Operator learning · Approximation theory
-    body: >-
-      We approximate operators between function spaces by Christoffel-weighted least squares in explicitly
-      constructed finite-dimensional operator spaces. We develop linear and polynomial operator families,
-      prove density results under assumptions on the input measure, and give implementable procedures for
-      sampling function-valued inputs from the associated Christoffel measures. Our finite-sample analysis
-      gives stability and accuracy bounds that distinguish best-approximation error from the effects of
-      sampling, solver error, and output discretization. For suitable product spaces and full-field
-      observations, the sample count sufficient for stability is independent of output resolution.
+    body: |-
+      Learning an operator from finitely many input-output pairs requires choosing both an approximation
+      space and a way to sample the inputs. We study these choices together through weighted least squares
+      in a Bochner $L^2$ space, where the input measure determines how approximation error is measured. An
+      operator-level Christoffel function connects the approximation space to sampling measures and weights
+      that make recovery stable.
+
+      We construct linear and polynomial operator spaces, establish density under assumptions on the input
+      measure, and describe how to sample from the associated Christoffel measures. Our finite-sample bounds
+      separate best-approximation error from the error introduced by fitting from data. For suitable product
+      spaces with full-field observations, the empirical Gram matrix reduces to repeated scalar blocks, so
+      the number of samples sufficient for stability is independent of the output dimension.
     links:
       - label: Preprint
         url: https://arxiv.org/abs/2512.11168
@@ -25,8 +30,8 @@ selected:
       - src: /assets/img/research/owls-schematic.png
         alt: Schematic of the least-squares problem relating sampled inputs, noisy outputs, and the approximation space of operators.
         caption: >-
-          Function-valued inputs are sampled to stabilize recovery in the operator space $V$.
-          The diagram separates the error of the best approximation in $V$ from the error in fitting it.
+          Inputs are sampled from a measure adapted to the operator space $V$. The diagram distinguishes
+          the best-approximation error in $V$ from the error introduced by fitting from finite data.
       # - src: /assets/img/research/owls-poisson.png
       #   alt: "Four panels: a random forcing, the true Poisson solution, the learned approximation, and their pointwise error."
       #   caption: >-
@@ -45,23 +50,28 @@ selected:
   - id: residual
     title: Uncertainty quantification for operator learning
     meta: Uncertainty quantification · Gaussian measures
-    body: >-
-      Building directly on this operator least-squares approximation, we place a Gaussian measure on a
-      space of residual operators orthogonal to the fitted space. We condition this measure on an
-      independent set of noisy full-field observations of the operator's function-valued outputs, after
-      subtracting the first-stage fit. The resulting posterior provides a correction and uncertainty over
-      the unresolved component. We prove finite-sample bounds on the posterior-averaged squared error of
-      the complete approximation, with high probability over both datasets, accounting for fitting error
-      and its propagation through conditioning.
+    body: |-
+      A finite-dimensional operator approximation leaves a residual that the fitted coefficients do not
+      describe. We study how additional observations can inform this residual through a Gaussian prior on
+      the orthogonal complement of the approximation space. Defining the observation model requires care:
+      point evaluation is not generally defined in a Bochner $L^2$ space. We establish conditions under which
+      the prior assigns full measure to a Banach space where evaluation is continuous, and use Cameron–Martin
+      theory to define the likelihood for noisy full-field observations.
+
+      The residual data are formed by subtracting the computed least-squares fit, so they also contain
+      first-stage estimation error. We analyze how this error propagates through Gaussian conditioning and
+      obtain finite-sample bounds on the posterior expected squared error of the complete approximation.
+      Under compatible regularity assumptions, these bounds identify when the accuracy rate available from
+      ideal residual observations is preserved.
     status: In preparation
     with: John D. Jakeman and Akil Narayan
     figures:
       - src: /assets/img/research/residual-two-stage.png
         alt: Schematic of the two-stage approximation, from sampled inputs through the approximation space to predicted outputs.
         caption: >-
-          The two stages use independent inputs (filled and open points). Corrections lie in $V^\perp$,
-          so they cannot remove the first-stage error $e_V$. Right: fitted output (dashed), corrected mean
-          (solid), and posterior draws (grey) at one input.
+          The two stages use independent input samples, shown as filled and open points. The residual
+          correction lies in $V^\perp$, so the first-stage error within $V$ remains. At right: the
+          first-stage prediction (dashed), posterior mean (solid), and posterior draws (grey) at a fixed input.
       # - src: /assets/img/research/residual-function-spaces.png
       #   alt: Diagram of the function spaces and maps used for residual inference.
       #   caption: >-
@@ -71,14 +81,18 @@ selected:
   - id: quadrature
     title: Constructive positive quadrature
     meta: Quadrature · Probability
-    body: >-
-      We analyze quadrature rules obtained by integrating weighted least-squares approximations built from
-      random samples. A well-conditioned fit alone does not ensure positive quadrature weights. We establish
-      finite-sample control of the scaled weights relative to their limiting values, allowing unbounded
-      Christoffel functions and limiting weights approaching zero. Under suitable sampling and positivity
-      assumptions, these estimates yield positive exact rules that can be pruned to at most $N$ nodes for
-      an $N$-dimensional real space—a constructive generalized Tchakaloff result. Additional tail assumptions
-      give weighted stability bounds for the unpruned rule.
+    body: |-
+      Integrating a weighted least-squares approximation gives a quadrature rule exact on the approximation
+      space. Even when the fit is well conditioned, however, the resulting weights need not be positive or
+      yield a stable rule. We study these questions through the alignment between evaluation representers
+      and the target functional, using probabilistic estimates to control how the scaled weights concentrate
+      near their limiting values.
+
+      The analysis accommodates unbounded Christoffel functions and limiting weights that approach zero.
+      Under suitable sampling and positivity assumptions, we obtain positive exact rules that can be reduced
+      to at most $N$ nodes for an $N$-dimensional real approximation space, giving a constructive generalized
+      Tchakaloff result. Additional tail assumptions provide weighted stability bounds for the rule before
+      this reduction.
     links:
       - label: Preprint
         url: https://arxiv.org/abs/2609.09506
@@ -87,9 +101,9 @@ selected:
       - src: /assets/img/research/quadrature-induced-rule.png
         alt: Quadrature weights from induced sampling clustering around their limiting curve, with the pruned positive rule marked in red.
         caption: >-
-          Pruning reduces a positive 500-node rule to ten nodes while preserving exactness on the
-          approximation space. The original weights (blue) are scaled by 500; the pruned weights
-          (red), by ten. Green shows the limiting scaled weights before pruning.
+          A positive rule with 500 nodes is reduced to ten nodes while preserving exactness on the
+          approximation space. For comparison, the original weights (blue) are multiplied by 500 and the
+          reduced weights (red) by ten. Green shows the limiting scaled weights of the original rule.
       # - src: /assets/img/research/quadrature-densities.png
       #   alt: Sampling densities compared with the standard Gaussian density.
       #   caption: >-
@@ -105,10 +119,13 @@ related:
   - id: kno
     title: Kernel neural operators
     body: >-
-      We develop neural operators with independently chosen kernels and quadrature, allowing
-      nonstationary, anisotropic kernels and irregular domains. We establish continuous and discrete
-      universal approximation results and obtain comparable benchmark accuracy to Fourier and transformer
-      neural operators, typically with an order of magnitude fewer trainable parameters.
+      Kernel neural operators approximate maps between function spaces through compositions of kernel
+      integral operators. We develop an architecture in which the kernel and quadrature rule can be chosen
+      independently, allowing expressive nonstationary, anisotropic kernels and integration rules adapted
+      to irregular domains. We establish universal approximation results for both the continuous and
+      discretized architectures. On the benchmarks studied, the method achieves accuracy comparable to
+      Fourier and transformer neural operators, typically with an order of magnitude fewer trainable
+      parameters.
     links:
       - label: TMLR
         url: https://openreview.net/forum?id=Q0C4jYZQ7x
@@ -119,10 +136,12 @@ related:
   - id: generative
     title: Direct inference for quantities of interest
     body: >-
-      We compare learning the conditional distribution of a low-dimensional quantity of interest directly
-      with learning and pushing forward the parameter posterior. Across generative model classes on a
-      linear–Gaussian benchmark, direct learning reduces model size and measured training cost, with
-      broadly comparable accuracy.
+      In many inverse problems, the goal is to infer a low-dimensional quantity of interest from
+      observations, while the unknown model parameters are high dimensional. We compare learning the
+      conditional distribution of the quantity of interest directly with learning the parameter posterior
+      and then pushing it forward. Using a linear–Gaussian benchmark, we examine accuracy and computational
+      cost across several generative model classes. Direct learning reduces model size and measured training
+      cost while achieving broadly comparable accuracy.
     links:
       - label: Proceedings
         url: "https://www.sandia.gov/app/uploads/sites/210/2025/12/CSRI-2025-proceedings_FINALDec1.pdf#page=296"
@@ -131,8 +150,9 @@ related:
 ongoing:
   - title: Randomized greedy reduced bases
     body: >-
-      We are developing error bounds for randomized greedy reduced-basis methods. Conditional lower-tail
-      estimates control the accumulated effect of imperfect snapshot selections, giving high-probability
-      bounds in terms of Kolmogorov widths at a prescribed iteration. Selections may depend on previous
-      iterations.
+      Greedy reduced-basis methods build approximation spaces by successively selecting snapshots with
+      large approximation error. Randomized selection can reduce the cost of this search, but imperfect
+      choices accumulate and influence subsequent iterations. We are developing an analysis that uses
+      conditional probability estimates to track these selection losses, with the aim of obtaining
+      high-probability approximation bounds in terms of Kolmogorov widths.
     with: Amy De Castro, Filip Bělík, and Akil Narayan
