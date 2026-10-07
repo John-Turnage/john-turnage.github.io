@@ -12,6 +12,8 @@
           url: https://openreview.net/forum?id=Q0C4jYZQ7x
         - label: arXiv
           url: https://arxiv.org/abs/2407.00809
+        - label: Code
+          url: https://github.com/matthew-lowery/kernel_neural_operator
       abstract: >-
         This paper introduces the Kernel Neural Operator (KNO), a provably convergent operator-learning
         architecture that utilizes compositions of deep kernel-based integral operators for function-space
@@ -87,6 +89,8 @@
       links:
         - label: arXiv
           url: https://arxiv.org/abs/2609.09506
+        - label: Code
+          url: https://github.com/fbelik/ConstructiveTchakaloffRandomizedLeastSquares
       abstract: >-
         We consider using randomized least squares to construct quadrature rules exact on a subspace of
         functions. Using new conditions that we call relative admissibility and reference weight concentration,
@@ -115,6 +119,8 @@
       links:
         - label: arXiv
           url: https://arxiv.org/abs/2512.11168
+        - label: Code
+          url: https://github.com/John-Turnage/OWLS_OpLearn
       abstract: >-
         We consider the problem of learning an unknown, possibly nonlinear operator between separable Hilbert
         spaces from supervised data. Inputs are drawn from a prescribed probability measure on the input space,

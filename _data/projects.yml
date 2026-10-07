@@ -19,6 +19,8 @@ selected:
     links:
       - label: Preprint
         url: https://arxiv.org/abs/2512.11168
+      - label: Code
+        url: https://github.com/John-Turnage/OWLS_OpLearn
     with: Matthew Lowery, John D. Jakeman, Zachary Morrow, Akil Narayan, and Varun Shankar
     figures:
       - src: /assets/img/research/owls-schematic.png
@@ -90,6 +92,8 @@ selected:
     links:
       - label: Preprint
         url: https://arxiv.org/abs/2609.09506
+      - label: Code
+        url: https://github.com/fbelik/ConstructiveTchakaloffRandomizedLeastSquares
     with: Filip Bělík and Akil Narayan
     figures:
       - src: /assets/img/research/quadrature-induced-rule.png
@@ -125,6 +129,8 @@ related:
         url: https://openreview.net/forum?id=Q0C4jYZQ7x
       - label: arXiv
         url: https://arxiv.org/abs/2407.00809
+      - label: Code
+        url: https://github.com/matthew-lowery/kernel_neural_operator
     with: Matthew Lowery (lead author), Zachary Morrow, John D. Jakeman, Akil Narayan, Shandian Zhe, and Varun Shankar
 
   - id: generative
