@@ -1,10 +1,4 @@
-# Research page.
-#   selected: featured projects, in display order; describe the construction and its guarantees.
-#   related:  compact descriptions, paper links, and collaborators.
-#   ongoing:  short notes on work in progress.
-# body, with, and captions: Markdown; $...$ renders as math. In a `|-` block, a blank line starts a
-# new paragraph. figures: list of {src, alt, caption}; with two or more, previous/next controls
-# appear and the first is shown by default.
+# Text fields are Markdown; $...$ renders as math.
 
 selected:
   - id: owls

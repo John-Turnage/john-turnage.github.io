@@ -1,9 +1,3 @@
-/* ==========================================================================
-   John Turnage — site styles
-   Warm neutrals, one muted burgundy accent, serif prose, sans for apparatus.
-   To recolor the site, change --accent (light) and --accent (dark) below.
-   ========================================================================== */
-
 :root {
   --bg: #fbf9f4;
   --surface: #f4f0e6;
@@ -118,7 +112,7 @@ img { max-width: 100%; height: auto; }
   margin: 0 0 0.6rem;
 }
 
-/* Sans "apparatus" text: dates, metadata, links rows */
+/* Dates, metadata, link rows */
 .meta {
   font-family: var(--sans);
   font-size: 0.9rem;
@@ -343,9 +337,9 @@ main { display: block; flex: 1 0 auto; }
 .related .project__links { margin-bottom: 0.25rem; }
 .related__text p:last-child { margin-bottom: 0; }
 
-/* Figure viewer: one figure at a time, captioned, click-through */
+/* Figure viewer */
 .viewer { margin: 0; max-width: var(--list); }
-/* Fixed frame so captions and controls stay put while clicking through figures of different shapes. */
+/* Fixed frame so the caption doesn't jump between figures */
 .viewer__frame {
   position: relative;
   aspect-ratio: 11 / 5;
@@ -398,7 +392,7 @@ main { display: block; flex: 1 0 auto; }
   transition: border-color 150ms ease, background-color 150ms ease;
 }
 .viewer__controls button:hover { border-color: var(--accent); background: var(--accent-soft); }
-/* Without JavaScript, figures are simply listed and the controls stay hidden. */
+/* No JS: list all figures, hide the controls */
 .viewer:not(.is-ready) .viewer__controls { display: none; }
 
 /* ---------- Education and CV ---------- */

@@ -13,14 +13,11 @@ author:
   affiliation: Department of Mathematics & Scientific Computing and Imaging Institute
   institution: University of Utah
   email: turnage@math.utah.edu
-  # Drop a square-ish portrait at this path and it appears on the home page.
   photo: /assets/img/headshot.jpg
   cv: /files/John_Turnage_CV.pdf
 
-# Shown in the footer. Change it when the content changes (not on every rebuild).
 updated: October 2026
 
-# Profile links shown in the hero and footer.
 links:
   - name: Google Scholar
     icon: scholar
@@ -44,7 +41,7 @@ nav:
   - title: CV
     url: /cv/
 
-# Link previews (Slack, email, social media): the headshot as a small "summary" card on every page.
+# Link preview image
 defaults:
   - scope:
       path: ""
@@ -56,6 +53,10 @@ defaults:
         alt: Portrait of John Turnage
       twitter:
         card: summary
+  - scope:
+      path: googleba23e35707a4ccb3.html
+    values:
+      sitemap: false
 
 plugins:
   - jekyll-seo-tag

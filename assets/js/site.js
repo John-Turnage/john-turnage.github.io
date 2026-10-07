@@ -1,4 +1,4 @@
-// Theme toggle: light by default; remembers the reader's choice.
+// Theme toggle
 (() => {
   const root = document.documentElement;
   const button = document.querySelector(".theme-toggle");
@@ -15,7 +15,7 @@
   });
 })();
 
-// Figure viewer: shows one captioned figure at a time with previous/next controls.
+// Figure viewer
 document.querySelectorAll(".viewer").forEach((viewer) => {
   const slides = [...viewer.querySelectorAll(".viewer__slide")];
   if (slides.length < 2) return;
@@ -36,7 +36,7 @@ document.querySelectorAll(".viewer").forEach((viewer) => {
   show(0);
 });
 
-// Copy BibTeX entries to the clipboard.
+// Copy BibTeX
 document.querySelectorAll(".copy-button").forEach((button) => {
   button.addEventListener("click", async () => {
     const text = button.parentElement.querySelector("pre").textContent;
@@ -50,7 +50,7 @@ document.querySelectorAll(".copy-button").forEach((button) => {
   });
 });
 
-// Publication abstract/BibTeX panels.
+// Abstract/BibTeX toggles
 document.querySelectorAll(".pub__toggle").forEach((button) => {
   const panel = document.getElementById(button.getAttribute("aria-controls"));
   button.addEventListener("click", () => {
@@ -60,8 +60,8 @@ document.querySelectorAll(".pub__toggle").forEach((button) => {
   });
 });
 
-// "Upcoming" labels are set at build time; drop any whose month has ended since then.
+// Remove "Upcoming" tags once the month has passed
 document.querySelectorAll(".tag[data-month]").forEach((tag) => {
   const [year, month] = tag.dataset.month.split("-").map(Number);
-  if (new Date() >= new Date(year, month, 1)) tag.remove();   // first day of the following month
+  if (new Date() >= new Date(year, month, 1)) tag.remove();
 });

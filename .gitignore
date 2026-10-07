@@ -1,14 +1,10 @@
-# Private working files: drafts, sources, and raw course materials.
-# Only curated copies under files/ and assets/ are published.
 External_Files/
+scripts/
 
-# Jekyll build output and caches
 _site/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
-
-# Local Ruby gems
 vendor/
 .bundle/
 

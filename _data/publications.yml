@@ -1,6 +1,4 @@
-# Publications, grouped by status. Within a group, list newest first.
-# authors: full names in order; the site bolds "John Turnage".
-# Abstracts may use $...$ for math (rendered with KaTeX).
+# Newest first within each group.
 
 - group: Published
   items:
